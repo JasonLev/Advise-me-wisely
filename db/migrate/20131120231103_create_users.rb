@@ -13,7 +13,6 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :adviser
       t.text :educations
       t.string :location
-      t.timestamps
     end
   end
 end
