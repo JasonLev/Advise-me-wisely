@@ -15,6 +15,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :location
 
       t.timestamps
-    end
+   end
   end
 end

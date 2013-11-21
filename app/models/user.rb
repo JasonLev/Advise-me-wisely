@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   :headline, :industry, :last_name, :linkedin_id, :picture_url, :protege, :public_profile_url, :location
 
   def self.from_omniauth(auth)
+
     User.find_by_linkedin_id(auth["uid"]) || self.create_with_omniauth(auth)
   end
 
