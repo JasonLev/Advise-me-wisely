@@ -1,3 +1,39 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
+  background-color: #ecf0f1;
+}
+
+#sidebar_wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #3498db;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+}
+
+#users {
+  margin-left: 100px;
+}
+
+#card {
+  height: 200px;
+  width: 500px;
+  border: solid black 2px;
+  margin-bottom: 25px;
+  background-color: #16a085;
+  color: white;
+}
+
+#sign_out {
+  color: white;
+}
+

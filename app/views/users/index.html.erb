@@ -1,2 +1,19 @@
-<h1>This finally worked!</h1>
-Passed!
+<div id="wrapper">
+  <div id="sidebar_wrapper">
+    <a href="/logout" id="sign_out">Logout</a><br><br>
+  </div>
+
+
+  <div id="users">
+    <% @users.each do |user| %>
+      <div id="card">
+        <img src="<%= user.picture_url %>"><br>
+        <strong><%= user.first_name %> <%= user.last_name %></strong> --
+        <%= user.location %><br>
+        <em><%= user.headline %></em><br>
+        Area of Expertise: <%= user.industry %><br>
+        <a href="mailto:<%= user.email_address %>" id="contact">Contact</a>
+      </div>
+    <% end %>
+  </div>
+</div>

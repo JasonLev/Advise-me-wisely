@@ -1,7 +1,7 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.integer :linkedin_id
+      t.string :linkedin_id
       t.string :email_address
       t.string :first_name
       t.string :last_name
@@ -12,7 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :protege
       t.boolean :adviser
       t.text :educations
-
+      t.string :location
       t.timestamps
     end
   end
