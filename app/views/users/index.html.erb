@@ -1,2 +1,17 @@
-<h1>This finally worked!</h1>
-Passed!
+<div id="users">
+  <% @users.each do |user| %>
+    <div id= "card">
+      <a href="<%= user.picture_url %>"><img src="<%= user.picture_url %>"></a>
+      <%= user.first_name %> <%= user.last_name %><br>
+      <%= user.headline %><br>
+      <%= user.location %>
+      <a class="btn btn-primary btn-lg btn-block" href="mailto:<%= user.email_address %>">
+        Contact
+      </a>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div id="adviser_column">
+
+</div>
