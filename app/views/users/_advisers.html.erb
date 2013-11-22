@@ -1,18 +1,27 @@
 <% @advisers.each do |adviser| %>
   <div class="card">
-    <img src="<%= adviser.picture_url %>"><br><br>
-    <strong><%= adviser.first_name %> <%= adviser.last_name %></strong> --
-    <%= adviser.location %><br>
-    <em><%= adviser.headline %></em><br>
-    Area of Expertise: <%= adviser.industry %><br>
-    <div id="status">
-      <% if adviser.protege == true %>
-        Role: <strong>Protege</strong>
+    <div id="image">
+      <img src="<%= adviser.picture_url %>">
+    </div>
+    <div id="info">
+      <strong><span id="username"><%= adviser.first_name %>
+        <%= adviser.last_name %></span></strong><br>
+      <%= adviser.location %><br>
+      <em><%= adviser.headline %></em><br>
+      Area of Expertise: <%= adviser.industry %>
+    </div>
+    <div class="role">
+      <% if adviser.protege == true && adviser.adviser == true %>
+        <p>P & A</p>
+      <% elsif  adviser.protege == true %>
+        <p>P</p>
       <% elsif adviser.adviser == true %>
-        Role: <strong>Adviser</strong>
+        <p>A</p>
       <% end %>
     </div><br>
-    <a id="contact" href="mailto:<%= adviser.email_address %>">
-    Contact <%= adviser.first_name %></a>
+    <span id="contact">
+      <a href="mailto:<%= adviser.email_address %>"><button type="button" class="btn btn-primary btn-lg"> Contact <%= adviser.first_name %></button>
+      </a>
+    </span>
   </div>
 <% end %>
