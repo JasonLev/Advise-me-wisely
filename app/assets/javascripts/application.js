@@ -30,7 +30,7 @@ $(function(){
       type: 'PUT',
       data: {user: {protege: true} }
   }).done(function(){
-    $('protegeButton').html('You are a protege!');
+    $('#protegeButton').html('You are a protege!').fadeOut(3000);
     })
   console.log(request);
 
@@ -45,7 +45,7 @@ $(function(){
       type: 'PUT',
       data: {user: {adviser: true} }
   }).done(function(){
-    $('protegeButton').html('You are an adviser!');
+    $('#adviserButton').html('You are an adviser!').fadeOut(3000);
     })
   console.log(request);
   });
