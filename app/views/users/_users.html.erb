@@ -1,19 +1,28 @@
 
 <% @users.each do |user| %>
   <div class="card">
-    <img src="<%= user.picture_url %>"><br><br>
-    <strong><%= user.first_name %> <%= user.last_name %></strong> --
-    <%= user.location %><br>
-    <em><%= user.headline %></em><br>
-    Area of Expertise: <%= user.industry %><br>
-    <div id="status">
-      <% if user.protege == true %>
-        Role: <strong>Protege</strong>
+    <div id="image">
+      <img src="<%= user.picture_url %>">
+    </div>
+    <div id="info">
+      <strong><span id="username"><%= user.first_name %>
+        <%= user.last_name %></span></strong><br>
+      <%= user.location %><br>
+      <em><%= user.headline %></em><br>
+      Area of Expertise: <%= user.industry %>
+    </div>
+    <div class="role">
+      <% if user.protege == true && user.adviser == true %>
+        <p>P & A</p>
+      <% elsif  user.protege == true %>
+        <p>P </p>
       <% elsif user.adviser == true %>
-        Role: <strong>Adviser</strong>
+        <p>A</p>
       <% end %>
     </div><br>
-    <a id="contact" href="mailto:<%= user.email_address %>">
-    Contact <%= user.first_name %></a>
+    <span id="contact">
+      <a href="mailto:<%= user.email_address %>"><button type="button" class="btn btn-primary btn-lg"> Contact <%= user.first_name %></button>
+      </a>
+    </span>
   </div>
 <% end %>
