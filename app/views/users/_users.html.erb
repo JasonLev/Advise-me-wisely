@@ -1,26 +1,19 @@
-<div id="users">
-  <% @users.each do |user| %>
-    <div class="card">
-      <img src="<%= user.picture_url %>">
-      <strong><%= user.first_name %> <%= user.last_name %></strong> --
-      <%= user.location %><br>
-      <em><%= user.headline %></em><br>
-      Area of Expertise: <%= user.industry %><br>
-      <a id="contact" href="mailto:<%= user.email_address %>">
-      Contact <%= user.first_name %>
-      </a>
-      <div id="status">
-        <% if user.protege == true && user.adviser == true %>
-          I am both an adviser and protege.  Contact me accordingly.
-        <% elsif user.adviser == true %>
-          I am an adviser! Contact me to get my advice!
-        <% elsif user.protege == true %>
-          I am a protege!  Contact me to give me advice!
-        <% else %>
-          I haven't decided yet.  I'm not yet an adviser or protege.
-        <% end %>
-      </div>
-    </div>
 
-  <% end %>
-</div>
+<% @users.each do |user| %>
+  <div class="card">
+    <img src="<%= user.picture_url %>"><br><br>
+    <strong><%= user.first_name %> <%= user.last_name %></strong> --
+    <%= user.location %><br>
+    <em><%= user.headline %></em><br>
+    Area of Expertise: <%= user.industry %><br>
+    <div id="status">
+      <% if user.protege == true %>
+        Role: <strong>Protege</strong>
+      <% elsif user.adviser == true %>
+        Role: <strong>Adviser</strong>
+      <% end %>
+    </div><br>
+    <a id="contact" href="mailto:<%= user.email_address %>">
+    Contact <%= user.first_name %></a>
+  </div>
+<% end %>

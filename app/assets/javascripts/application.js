@@ -33,6 +33,7 @@ $(function(){
     $('protegeButton').html('You are a protege!');
     })
   console.log(request);
+
   });
 
   $('#adviserButton').click(function(event){
@@ -44,7 +45,7 @@ $(function(){
       type: 'PUT',
       data: {user: {adviser: true} }
   }).done(function(){
-    $('protegeButton').html('You are a protege!');
+    $('protegeButton').html('You are an adviser!');
     })
   console.log(request);
   });
@@ -56,16 +57,17 @@ $(function(){
     $('#proteges').hide();
   });
 
+  $('#all-proteges').click(function(){
+    $('#users').hide();
+    $('#advisers').hide();
+    $('#proteges').show();
+  });
+
   $('#all-advisers').click(function(){
     $('#users').hide();
     $('#proteges').hide();
     $('#advisers').show();
   });
 
-  $('#all-users').click(function(){
-    $('#proteges').hide();
-    $('#advisers').hide();
-    $('#users').show();
-  });
 
 });

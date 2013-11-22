@@ -1,6 +1,6 @@
-
 <div id="wrapper">
   <div id="sidebar_wrapper">
+
     <% if current_user.protege == false %>
       <button id="protegeButton" data-user-id='<%= current_user.id %>'>
         Become a protege
@@ -11,10 +11,18 @@
         Become an adviser
       </button>
     <% end %>
+
+
+  <div id="users">
+    <%= render "users" %>
   </div>
 
-  <%= render :partial => "users/users" %>
-  <%= render :partial => "users/proteges" %>
-  <%= render :partial => "users/adviser" %>
+  <div id="proteges">
+    <%= render "proteges" %>
+  </div>
+
+  <div id="advisers">
+    <%= render "advisers" %>
+  </div>
 
 </div>
