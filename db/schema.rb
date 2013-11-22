@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(:version => 20131120231103) do
     t.string   "industry"
     t.string   "picture_url"
     t.string   "public_profile_url"
-    t.boolean  "protege"
-    t.boolean  "adviser"
+    t.boolean  "protege",            :default => false
+    t.boolean  "adviser",            :default => false
     t.text     "educations"
     t.string   "location"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
+
 end

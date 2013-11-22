@@ -12,10 +12,23 @@
       </button>
     <% end %>
 
-    <div id ="welcome">
+    <div class="welcome">
       <p>Welcome to Advise Me Wisely!</p>
-      <p>You've come to the right place to connect with others and seek/give career advice.  First things first, make sure you become a protege or an adviser.  Go ahead and use use the button(s) above.</p>
+      <p>You've come to the right place to connect with others in order to seek or give career advice.</p>
+      <% if current_user.protege == false && current_user.adviser == false %>
+        <p>First things first, make sure you become a protege or an adviser.  Go ahead and use the button(s) above.
+        </p>
+        <p>You might question, "what does it mean to be a protege or adviser?"</p>
+        <p>Well, a protege is seeking advice.  It's best to be clear that a protege is NOT seeking a mentor.  Connections on Advise Me Wisely aren't intended to be long-term. Okay, maybe it might happen if both the adviser and protege want it, but Advise Me Wisely is setup for short-term relationships.  Basically, it's a way to find and give informational interviews.</p>
+        <p>As far as what it means to become an adviser... an adviser will give informational interviews and advice to the proteges.  Beyond that, it's up to you.</p><br>
+        <p>The rest is simple...  find the advisers or proteges and connect with them via email.
+        </p>
+      <% else %>
+        <p>Keep using the site and connect with the adivsers and/or proteges you find here.</p>
+
+      <% end %>
     </div>
+
   </div>
 
 

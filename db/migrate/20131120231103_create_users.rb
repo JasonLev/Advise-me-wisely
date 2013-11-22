@@ -9,8 +9,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :industry
       t.string :picture_url
       t.string :public_profile_url
-      t.boolean :protege
-      t.boolean :adviser
+      t.boolean :protege, default: false
+      t.boolean :adviser, default: false
       t.text :educations
       t.string :location
 
