@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#LinkedIn-button {
+  text-align: center;
+
+}
 #protegeButton {
   margin: 10px;
 }
@@ -72,5 +76,9 @@ body {
 
 #sign_out {
   color: white;
+}
+
+.clicked {
+  background-color: yellow;
 }
 
