@@ -1,4 +1,3 @@
-
 <% @users.each do |user| %>
   <div class="card">
     <div id="image">
@@ -15,7 +14,7 @@
       <% if user.protege == true && user.adviser == true %>
         <p>P & A</p>
       <% elsif  user.protege == true %>
-        <p>P </p>
+        <p>P</p>
       <% elsif user.adviser == true %>
         <p>A</p>
       <% end %>
