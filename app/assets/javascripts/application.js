@@ -13,3 +13,36 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+$(function(){
+
+  $('#protegeButton').click(function(){
+    alert("You clicked thie protege button");
+  });
+//   $('#all-proteges').click(function(){
+//     // $.ajax({
+//     //   url: "/users/",
+//     //   method: "GET",
+//     //   success: function(data){
+//     //     callBack(data["text"]);
+//     //   }
+//     // })
+//     $('#users').remove();
+//     $('#advisers').remove();
+//     $('#proteges').append();
+//   });
+
+  // $('#all-advisers').click(function(){
+//     $('#users').hide();
+//     $('#proteges').hide();
+//     $('#advisers').show();
+//   });
+
+//   $('#all-users').click(function(){
+//     $('#proteges').hide();
+//     $('#advisers').hide();
+//     $('#users').show();
+//   });
+
+});

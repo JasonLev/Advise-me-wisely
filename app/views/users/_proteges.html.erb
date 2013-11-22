@@ -1,0 +1,15 @@
+<div id="proteges">
+  <% @proteges.each do |protege| %>
+    <div class="card">
+      <img src="<%= protege.picture_url %>">
+      <strong><%= protege.first_name %> <%= protege.last_name %></strong> --
+      <%= protege.location %><br>
+      <em><%= protege.headline %></em><br>
+      Area of Expertise: <%= protege.industry %><br>
+      <a id="contact" href="mailto:<%= protege.email_address %>">
+      Contact <%= protege.first_name %>
+      </a>
+    </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+<div id="advisers">
+  <% @advisers.each do |adviser| %>
+    <div class="card">
+      <img src="<%= adviser.picture_url %>">
+      <strong><%= adviser.first_name %> <%= adviser.last_name %></strong> --
+      <%= adviser.location %><br>
+      <em><%= adviser.headline %></em><br>
+      Area of Expertise: <%= adviser.industry %><br>
+      <a id="contact" href="mailto:<%= adviser.email_address %>">
+      Contact <%= adviser.first_name %>
+      </a>
+    </div>
+
+  <% end %>
+</div>
