@@ -1,0 +1,18 @@
+<% @proteges.each do |protege| %>
+  <div class="card">
+    <img src="<%= protege.picture_url %>"><br><br>
+    <strong><%= protege.first_name %> <%= protege.last_name %></strong> --
+    <%= protege.location %><br>
+    <em><%= protege.headline %></em><br>
+    Area of Expertise: <%= protege.industry %><br>
+    <div id="status">
+      <% if protege.protege == true %>
+        Role: <strong>Protege</strong>
+      <% elsif protege.adviser == true %>
+       Role: <strong>Adviser</strong>
+      <% end %>
+    </div><br>
+    <a id="contact" href="mailto:<%= protege.email_address %>">
+    Contact <%= protege.first_name %></a>
+  </div>
+<% end %>

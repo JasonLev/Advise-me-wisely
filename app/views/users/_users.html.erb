@@ -1,0 +1,18 @@
+<% @users.each do |user| %>
+  <div class="card">
+    <img src="<%= user.picture_url %>"><br><br>
+    <strong><%= user.first_name %> <%= user.last_name %></strong> --
+    <%= user.location %><br>
+    <em><%= user.headline %></em><br>
+    Area of Expertise: <%= user.industry %><br>
+    <div id="status">
+      <% if user.protege == true %>
+        Role: <strong>Protege</strong>
+      <% elsif user.adviser == true %>
+        Role: <strong>Adviser</strong>
+      <% end %>
+    </div><br>
+    <a id="contact" href="mailto:<%= user.email_address %>">
+    Contact <%= user.first_name %></a>
+  </div>
+<% end %>

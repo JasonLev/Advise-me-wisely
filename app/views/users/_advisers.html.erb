@@ -1,0 +1,18 @@
+<% @advisers.each do |adviser| %>
+  <div class="card">
+    <img src="<%= adviser.picture_url %>"><br><br>
+    <strong><%= adviser.first_name %> <%= adviser.last_name %></strong> --
+    <%= adviser.location %><br>
+    <em><%= adviser.headline %></em><br>
+    Area of Expertise: <%= adviser.industry %><br>
+    <div id="status">
+      <% if adviser.protege == true %>
+        Role: <strong>Protege</strong>
+      <% elsif adviser.adviser == true %>
+        Role: <strong>Adviser</strong>
+      <% end %>
+    </div><br>
+    <a id="contact" href="mailto:<%= adviser.email_address %>">
+    Contact <%= adviser.first_name %></a>
+  </div>
+<% end %>
