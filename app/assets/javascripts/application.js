@@ -17,32 +17,55 @@
 
 $(function(){
 
-  $('#protegeButton').click(function(){
-    alert("You clicked thie protege button");
+  $('#advisers').hide();
+  $('#proteges').hide();
+
+  $('#protegeButton').click(function(event){
+    // we pass in "event" above because it will let us use "this" below
+    // "this" is the same as event.currentTarget
+   var id= $(this).attr("data-user-id");
+   console.log("grab data-user-id ", id);
+   var request = $.ajax({
+      url: '/users/' + id,
+      type: 'PUT',
+      data: {user: {protege: true} }
+  }).done(function(){
+    $('protegeButton').html('You are a protege!');
+    })
+  console.log(request);
   });
-//   $('#all-proteges').click(function(){
-//     // $.ajax({
-//     //   url: "/users/",
-//     //   method: "GET",
-//     //   success: function(data){
-//     //     callBack(data["text"]);
-//     //   }
-//     // })
-//     $('#users').remove();
-//     $('#advisers').remove();
-//     $('#proteges').append();
-//   });
 
-  // $('#all-advisers').click(function(){
-//     $('#users').hide();
-//     $('#proteges').hide();
-//     $('#advisers').show();
-//   });
+  $('#adviserButton').click(function(event){
 
-//   $('#all-users').click(function(){
-//     $('#proteges').hide();
-//     $('#advisers').hide();
-//     $('#users').show();
-//   });
+   var id= $(this).attr("data-user-id");
+   console.log("grab data-user-id ", id);
+   var request = $.ajax({
+      url: '/users/' + id,
+      type: 'PUT',
+      data: {user: {adviser: true} }
+  }).done(function(){
+    $('protegeButton').html('You are a protege!');
+    })
+  console.log(request);
+  });
+
+
+  $('#all-users').click(function(){
+    $('#users').show();
+    $('#advisers').hide();
+    $('#proteges').hide();
+  });
+
+  $('#all-advisers').click(function(){
+    $('#users').hide();
+    $('#proteges').hide();
+    $('#advisers').show();
+  });
+
+  $('#all-users').click(function(){
+    $('#proteges').hide();
+    $('#advisers').hide();
+    $('#users').show();
+  });
 
 });

@@ -10,12 +10,12 @@
       Contact <%= user.first_name %>
       </a>
       <div id="status">
-        <% if user.protege == true %>
-          I am a protege!  Contact me to give me advice!
+        <% if user.protege == true && user.adviser == true %>
+          I am both an adviser and protege.  Contact me accordingly.
         <% elsif user.adviser == true %>
           I am an adviser! Contact me to get my advice!
-        <% elsif user.protege == true && user.adviser == true %>
-          I am both an adviser and protege.  Contact me accordingly.
+        <% elsif user.protege == true %>
+          I am a protege!  Contact me to give me advice!
         <% else %>
           I haven't decided yet.  I'm not yet an adviser or protege.
         <% end %>
