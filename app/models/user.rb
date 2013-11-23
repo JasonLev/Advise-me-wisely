@@ -3,8 +3,9 @@ class User < ActiveRecord::Base
   attr_accessible :adviser, :educations, :email_address, :first_name,
   :headline, :industry, :last_name, :linkedin_id, :picture_url, :protege, :public_profile_url, :location
 
-  def self.from_omniauth(auth)
+  validates_uniqueness_of :email_address, :linkedin_id
 
+  def self.from_omniauth(auth)
     User.find_by_linkedin_id(auth["uid"]) || self.create_with_omniauth(auth)
   end
 
@@ -20,10 +21,11 @@ class User < ActiveRecord::Base
       user.public_profile_url = auth["info"]["public_profile"]
       user.location = auth["info"]["location"]["name"]
       user.save
+      #return the user
+      user
 
   end
 
   # validates_presence_of :email_address, :linkedin_id , :first_name, :last_name
-  validates_uniqueness_of :email_address, :linkedin_id
 
 end
