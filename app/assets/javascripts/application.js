@@ -32,7 +32,6 @@ $(function(){
   }).done(function(){
     $('#protegeButton').html('You are a protege!').fadeOut(3000);
     })
-  console.log(request);
 
   });
 
@@ -47,7 +46,7 @@ $(function(){
   }).done(function(){
     $('#adviserButton').html('You are an adviser!').fadeOut(3000);
     })
-  console.log(request);
+
   });
 
 
